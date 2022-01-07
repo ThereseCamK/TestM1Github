@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .page{
+            display: grid;
+            grid-template-rows: 10vh 25vh 65vh;
+            grid-template-columns: 100%;
+            grid-template-areas: 'header'
+                                'subHeader'
+                                'content' ;
+            text-align: center;
+        }
+        .header{
+            grid-area: header;
+            padding-top: 20px;
+            background-color: black;
+            color: white;
+            text-shadow: 5px 5px 10px pink;
+          
+
+        }
+        .subHeader{
+            padding-top: 40px;
+            grid-area: subHeader;
+            background-color: gray;
+           
+        }
+        .content{
+            padding-top: 40px;
+            grid-area: content;
+            background-color: hotpink;
+         
+        }
+    </style>
+</head>
+<body>
+
+    <div id="output">
+
+    </div>
+
+    </body>
+
+    <script>
+
+        //HjelpeVariabel
+        outputDiv = document.getElementById('output');
+
+        //Model
+        var bunn = '';
+        var fyll = '';
+        var disabledButton = 'disabled';
+        var valgtText = 'Du har ikke valgt noe enda!'
+        var seconds = 0;
+        setInterval(function(){
+                seconds ++
+             }, 1000)
+
+        
+        //View
+        show()
+        function show(){
+            let html = `<div class="page">
+                    <div class="header"> <h1>PIZZA - BESTILLING</h1></div>
+                    <div id="text" class="subHeader"></div>
+                    <div class="content">${showContent()}</div>
+                </div>`
+        outputDiv.innerHTML = html;
+        }
+        showText();
+
+       function showText(){
+                let html = `
+                <div> ${valgtText} ${bunn} ${fyll}</div>
+                <button ${disabledButton} onclick="checkOrder()">Bestill</button>
+                `;
+                document.getElementById('text').innerHTML = html;
+        }
+
+    //     show();
+         function showContent(){
+             let html = `
+                <div>Gjør Ett valg På hver linje:</div>
+                ${pizzaBunn()}
+                ${pizzaFyll()}
+             `
+            return html;
+         }
+      
+         function pizzaBunn(){
+             let html = `    <h3>Bunn:</h3>
+                <input type="radio" name="bunn" onchange="info('Tykk Bunn')" /> TYKK BUNN <br>
+                <input type="radio" name="bunn" onchange="info('Tynn Bunn')" /> TYNN BUNN <hr>
+             `
+             return html;
+         }
+         
+         function pizzaFyll(){
+             let html = `
+             <h3> Fyll: </h3>
+                <input type="radio" name="fyll" onchange="info('Taco')" /> TACO <br>
+                <input type="radio" name="fyll" onchange="info('Kylling')" /> KYLLING <br>
+                <input type="radio" name="fyll" onchange="info('Pepperoni')" /> PEPPERONI <hr>
+             `
+             return html;
+         }
+    
+
+
+        //Controller
+
+        function info(valgtItem){
+            console.log(valgtItem)
+            if(valgtItem == 'Tykk Bunn' || valgtItem == 'Tynn Bunn'){
+                valgtText = 'Du har valgt: '
+                bunn = valgtItem;
+            }
+
+            if(valgtItem == 'Taco' || valgtItem == 'Kylling' || valgtItem == 'Pepperoni'){
+                valgtText = 'Du har valgt: '
+                fyll = valgtItem;
+            }
+
+            if(bunn != '' && fyll != ''){
+                disabledButton = '';
+            }
+
+            showText()           
+        }
+       function  checkOrder(){
+        
+            valgtText = `<h3> Du Bestillte nettop en pizza</h3> <br> 
+            Den hadde ${bunn} <br> ${fyll} ! <br> Velkommen igjen ! 
+            <br><button onclick="resetAll()"> Legg til ny Bestilling</button><br>
+            <div> sekunder brukt på bestilling: ${seconds}</div>        
+            `;
+
+            bunn = '';
+            fyll = '';
+            disabledButton = 'disabled';
+            showText() 
+       }
+     
+  
+       function resetAll(){
+     
+        valgtText = 'Du har ikke valgt noe enda!'
+        seconds = 0;
+        show() 
+        showText()
+        
+       }
+
+    </script>
+</html>

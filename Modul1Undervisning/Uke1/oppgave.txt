@@ -1,0 +1,12 @@
+Lag en side som har 
+        - 1 Tabell med hva dere ønsker holder med 3 rader og 3 kolonner.
+        - 1 Punktliste med hva dere ønsker
+        - 1 Headline
+        - 1 Annet element dere velger. 
+
+Det skal ikke være store ting, men bare slik at du får trent på bruken av disse. 
+legg oppgaven i en github repo som dere kaller UndervisningOppgaver og send linken til repo til meg på discord. 
+    OBS! Husk å gjøre repo public. 
+    Spør om det er noe som er uklart eller om du trenger hjelp. 
+
+

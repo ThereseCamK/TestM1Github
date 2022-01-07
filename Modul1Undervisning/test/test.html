@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+</body>
+<script>
+//Model
+let app = document.getElementById('app');
+let inputText = '';
+
+//View
+show()
+function show() {
+    app.innerHTML = `
+        <input type="text" onchange="text(this.value)">
+        <li>${inputText}</li>
+        
+    
+    `
+}
+
+//Controller
+function text(textInput) {
+    inputText = textInput
+    show();
+}
+
+</script>
+</html> 

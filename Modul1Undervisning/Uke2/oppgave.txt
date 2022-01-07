@@ -1,0 +1,12 @@
+TirsdagsOppgave: 
+Lag en side som har minst 3 knapper .
+og lag EN funskjon til knappene -> Den skal ta det som står på knappen og printe ut i en annen div på skjermen.
+
+Feks. du trykket på knapp1 hvis man trykket på knappen det står : knapp1.
+husk å legge denne til i repoet som du lange med UndervisningOppgaver
+
+
+
+
+
+

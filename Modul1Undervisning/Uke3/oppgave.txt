@@ -1,0 +1,6 @@
+Tirsdagsoppgave gjøres før Fredag
+
+Lag oppgaven fra Fredag på MVC metoden 
+men ikke bruk alert, vis en tekst på siden om det er rett eller galt - med hjelp av en variabel
+
+

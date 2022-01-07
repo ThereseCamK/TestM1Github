@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="select"></div>
+  
+</body>
+<script>
+    var color = 'brown';
+
+show()
+    function show(){
+        let html = `<div">
+            <select onchange="changeColor(this)"> 
+                <option value="black" > svart</option>
+                <option value="navy"> mørkeblå</option>
+                <option value="lightslategray"> lysegrå</option>
+                <option value="lime"> limegrønn</option>
+                <option value="pink"> rosa </option>
+            </select>
+            
+            </div>
+            <div id="boks"></div>`
+            document.getElementById('select').innerHTML = html;
+    }
+    showBoks();
+    function showBoks(){
+        document.getElementById('boks').innerHTML =
+        `<div style="background-color:${color};">hva slags farge blir det her?</div>`
+    }
+
+    function changeColor(chosenColor){
+        console.log(chosenColor.value, 'farge')
+        color  = chosenColor.value; 
+        showBoks()
+    }
+</script>
+</html>

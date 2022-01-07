@@ -1,0 +1,7 @@
+TirsdagsOppgave 
+
+Lag en liste(array) med 6 navn:
+
+i viewet skal du lage en punktliste med disse navnene med hjelp av en forløkke
+
+HVIS du vil ha en utfordring så kan du ha inputfelt hvor brukeren skriver inn navn til listen i tillegg

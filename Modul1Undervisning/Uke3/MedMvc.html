@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MVC input</title>
+</head>
+<body>
+    <div id="app"></div>
+
+
+   
+<script>
+    //hjelpeVariabel 
+    let appDiv = document.getElementById('app');
+
+    //Model
+    let welcomeMessage = '';
+    var userName = ' ';
+    let ageMessage= '';
+    let age = '';
+    let number = '';
+    //View
+    updateView();
+    function updateView(){
+        let html = `
+                <h3>Hva heter du ? </h3>
+                <div>${welcomeMessage}  <br> ${userName} ${ageMessage}</div>
+                <div></div>
+
+                navn:<input type="text" oninput="userName = this.value" />  
+                alder:<input type="number" oninput="age = this.value" />  
+                <button onclick="viewInfo()">Lagre input</button>
+                <div>${number}</div>
+                <button onclick="count()">tell</button>
+        `;
+
+        appDiv.innerHTML = html;
+    }
+    // function changename(yourName){
+
+    //     name += `Velkommen ${yourName}`;
+    //     updateView();
+
+    // }
+    function viewInfo(){
+        ageMessage = `Din alder er: ${age}`;
+        welcomeMessage = 'Velkommen ';
+
+        
+        updateView();
+    }
+function count(){
+    number ++;
+    updateView();
+}
+
+</script>
+</body>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undervisning Onclick, this, parameter</title>
+</head>
+<body>
+    <h2 id="answerBox"></h2>
+    <!--<div id="question1" >
+        <h1> Hva heter jeg til MellomNavn?</h1>
+        
+        <div onclick="question1answer1()">Therese</div>
+        <div onclick="question1answer2()">Camilla</div>
+        <div onclick="question1answer3()">Trude</div>
+    </div>-->
+    <div id="question1" >
+        <h1> Hva heter jeg til MellomNavn?</h1>
+        
+        <div onclick="answer(this, 'Feil')">Therese</div>
+        <div onclick="answer(this, 'Riktig')">Camilla</div>
+        <div onclick="answer(this, 'Feil')">Trude</div>
+    </div>
+    <!--
+    <div onclick="changeColor(this,'pink')">Rosa</div>
+    <div onclick="changeColor(this,'blue')">Blå</div>
+    <div onclick="changeColor(this,'green')">Grønn</div>
+
+ <div onclick="selectDiv(this)"> Tekst 1 </div>
+    <div onclick="selectDiv(this)"> Tekst 2 </div>
+    <div onclick="selectDiv(this)"> Tekst 3 </div>
+
+    <div onclick="addTwoNumbers(this, 3, 7)">Legg sammen 3  og 7</div>
+    <div onclick="addTwoNumbers(this, 14, 54)">Legg sammen 14 og 54 </div>
+    <div onclick="addTwoNumbers(this, 410, 67)">Legg sammen 410 og 67</div> -->
+    <hr>
+    <div id="output">.......</div>
+
+   <!--<button onclick="changeText()">null ut output</button>--> 
+    
+    <script>
+        function question1answer1(){
+            document.getElementById('answerBox').innerHTML = 'Du svarte Therese og det er feil';
+        }
+        function question1answer2(){
+            document.getElementById('answerBox').innerHTML = "Du svarte Camilla og det er riktig!";
+        }
+        function question1answer3(){
+            document.getElementById('answerBox').innerHTML = 'Du svarte Trude og det er feil';
+        }
+        function answer(alernative, svar){
+          console.log(alernative.innerHTML, ' hva er dette?')
+          document.getElementById('answerBox').innerHTML = 'Du svarte ' + 
+          alernative.innerHTML + ' Det var:' + svar; 
+        }
+        // function selectDiv(verdi){
+        //     console.log(verdi)
+        //     verdi.innerHTML = "ooooppps!";
+        //   //  document.getElementById('output').innerHTML = ' Velkommen! du trykket på : ' + verdi.innerHTML;
+        // }
+
+        // function addTwoNumbers(element, number1, number2){
+        //     //element.innerHTML = number1 + number2;
+        //     document.getElementById('output').innerHTML = number1 + number2;
+        // }
+
+        // function changeText(){
+        //     document.getElementById('output').innerHTML = ' ';
+        // }
+        // function changeColor(element, color){
+        //     console.log(color)
+        //     // element.innerHTML = `<div style="background-color: ${color};"> ${color}</div>`;
+        //     element.innerHTML = '<div style="background-color: '+ color+';">'+color+'</div>';
+            
+        //     document.getElementById('output').innerHTML = `<div style="background-color: ${color};">hei</div>`;
+        // }
+    </script>
+</body>
+</html>

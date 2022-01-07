@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uten Mvc Input</title>
+</head>
+<body>
+    <h3>Hva heter du ? </h3>
+     <div id="nameOutput">
+            ......
+     </div>
+
+     <input type="text" onchange="changename(this.value)">
+
+
+     <div id="output">... </div>
+    <input id="name" type="text" value="Fornavn">
+    <button onclick="sendName()">Lagre Navn</button> 
+<script>
+
+
+    function sendName(){
+            var inputValue = document.getElementById('name').value;
+            //gjør første bokstav til stor bokstav
+            document.getElementById('output').innerHTML = inputValue[0].toUpperCase() + inputValue.substring(1);
+        }
+        
+    function changename(yourName){
+
+        document.getElementById('nameOutput').innerHTML = 'Velkommen ' + yourName;
+    }
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+TirsdagsOppgave - gjøres til neste undervisning
+
+Valgsetninger - Sammenligne flere ting på en gang (eller) som ligger på moodle
+på MVC metoden
+
+
+Det er lov i denne å ha to document.getElementById for at det skal vises :)
+
+
+legg den i undervisningsrepoet ditt og send meg IO-Link :) 

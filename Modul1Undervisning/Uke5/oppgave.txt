@@ -1,0 +1,5 @@
+undervisningsoppgave til neste undervisning 
+
+ta utgangspunkt i tidligere oppgave der du en bruker gjetter ord eller tall. 
+
+lag unitTester for den oppgaven. 
